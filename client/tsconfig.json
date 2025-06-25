@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"target": "es2020",
+		"module": "none",
+		"moduleResolution": "node",
+		"skipLibCheck": true,
+		"strict": true,
+		"noImplicitOverride": true,
+		"sourceMap": true,
+		"preserveWatchOutput": true
+	},
+	"include": [
+		"./src/**/*.ts"
+	]
+}

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"
+
+# Create the environment file
+echo "# Docker environment variables" > .env
+echo "BUILD_UID=$(id -u)" >> .env
+echo "BUILD_GID=$(id -g)" >> .env
+echo "DOCKER_PORT=8080" >> .env
+
+# Create the dist dir
+mkdir -p dist
+
+# Pull the Docker images
+docker compose pull
+
+# Install dependencies
+docker compose run --rm client npm i
+docker compose run --rm --workdir /client client npm i
+docker compose run --rm scss npm i

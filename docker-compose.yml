@@ -1,0 +1,35 @@
+services:
+  client:
+    image: node:alpine
+    init: true
+    stop_signal: SIGHUP
+    restart: unless-stopped
+    user: "${BUILD_UID}:${BUILD_GID}"
+    working_dir: /webpack
+    volumes:
+      - ./webpack:/webpack
+      - ./client:/client
+      - ./dist:/dist
+    command: npx webpack -w
+
+  scss:
+    image: node:alpine
+    init: true
+    stop_signal: SIGHUP
+    restart: unless-stopped
+    user: "${BUILD_UID}:${BUILD_GID}"
+    working_dir: /scss
+    volumes:
+      - ./scss:/scss
+      - ./dist:/dist
+    command: npx sass --watch src/index.scss /dist/index.css
+
+  nginx:
+    image: nginx:alpine
+    init: true
+    restart: unless-stopped
+    ports:
+      - "${DOCKER_PORT}:80"
+    volumes:
+      - ./:/app:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
