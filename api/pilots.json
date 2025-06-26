@@ -1,0 +1,332 @@
+[
+	{
+		"first": "Conner",
+		"last": "Mayo",
+		"serial": "6684872735",
+		"callsign": "Bullseye"
+	},
+	{
+		"first": "Megan",
+		"last": "Baker",
+		"serial": "2736292669",
+		"callsign": "Flash"
+	},
+	{
+		"first": "Bradley",
+		"last": "McDonald",
+		"serial": "3047023830",
+		"callsign": "Hawk"
+	},
+	{
+		"first": "Christian",
+		"last": "Sharp",
+		"serial": "9594852554",
+		"callsign": "Bandit"
+	},
+	{
+		"first": "Tyler",
+		"last": "White",
+		"serial": "9641108136",
+		"callsign": "Iceman"
+	},
+	{
+		"first": "Austin",
+		"last": "Miller",
+		"serial": "7801597995",
+		"callsign": "Viper"
+	},
+	{
+		"first": "Joel",
+		"last": "Donaldson",
+		"serial": "1820618087",
+		"callsign": "Maverick"
+	},
+	{
+		"first": "Ryan",
+		"last": "Walker",
+		"serial": "6042910073",
+		"callsign": "Topgun"
+	},
+	{
+		"first": "Wyatt",
+		"last": "Howard",
+		"serial": "5655930326",
+		"callsign": "Ace"
+	},
+	{
+		"first": "Payton",
+		"last": "Webb",
+		"serial": "8317689137",
+		"callsign": "Lightning"
+	},
+	{
+		"first": "Jace",
+		"last": "Anderson",
+		"serial": "7168412392",
+		"callsign": "Stinger"
+	},
+	{
+		"first": "Nathan",
+		"last": "Paterson",
+		"serial": "9795756253",
+		"callsign": "Spectre"
+	},
+	{
+		"first": "Easton",
+		"last": "Yang",
+		"serial": "7963313438",
+		"callsign": "Gizmo"
+	},
+	{
+		"first": "Taylor",
+		"last": "Youmans",
+		"serial": "5254197685",
+		"callsign": "Sparky"
+	},
+	{
+		"first": "Gabriel",
+		"last": "Johnson",
+		"serial": "8361079042",
+		"callsign": "Tiger"
+	},
+	{
+		"first": "Audrey",
+		"last": "Martin",
+		"serial": "1322584362",
+		"callsign": "Falcon"
+	},
+	{
+		"first": "Adam",
+		"last": "Nelson",
+		"serial": "4967883336",
+		"callsign": "Raven"
+	},
+	{
+		"first": "Brittany",
+		"last": "Taylor",
+		"serial": "4192186525",
+		"callsign": "Storm"
+	},
+	{
+		"first": "Gavin",
+		"last": "Long",
+		"serial": "7439799135",
+		"callsign": "Whirlwind"
+	},
+	{
+		"first": "Sarah",
+		"last": "Stone",
+		"serial": "4608280474",
+		"callsign": "Skydancer"
+	},
+	{
+		"first": "Sawyer",
+		"last": "Hayes",
+		"serial": "9667126363",
+		"callsign": "Pheonix"
+	},
+	{
+		"first": "Cole",
+		"last": "Pierce",
+		"serial": "8360906708",
+		"callsign": "Hurricane"
+	},
+	{
+		"first": "Keith",
+		"last": "Harris",
+		"serial": "7329864613",
+		"callsign": "Wildcat"
+	},
+	{
+		"first": "Isaac",
+		"last": "King",
+		"serial": "4113415059",
+		"callsign": "Comet"
+	},
+	{
+		"first": "Jeremiah",
+		"last": "Smith",
+		"serial": "9042713113",
+		"callsign": "Meteor"
+	},
+	{
+		"first": "Jonathan",
+		"last": "Russell",
+		"serial": "8325892185",
+		"callsign": "Thunderbolt"
+	},
+	{
+		"first": "Carson",
+		"last": "Reed",
+		"serial": "4010713669",
+		"callsign": "Nightshade"
+	},
+	{
+		"first": "Cameron",
+		"last": "Phillips",
+		"serial": "6155522575",
+		"callsign": "Shadowfax"
+	},
+	{
+		"first": "Keaton",
+		"last": "Jackson",
+		"serial": "2040884986",
+		"callsign": "Blizzard"
+	},
+	{
+		"first": "Parker",
+		"last": "Simmons",
+		"serial": "3353724019",
+		"callsign": "Sandstorm"
+	},
+	{
+		"first": "Lucas",
+		"last": "Harvey",
+		"serial": "1544167961",
+		"callsign": "Outlaw"
+	},
+	{
+		"first": "James",
+		"last": "Richards",
+		"serial": "8867874682",
+		"callsign": "Ghost"
+	},
+	{
+		"first": "Jason",
+		"last": "Powell",
+		"serial": "4745203172",
+		"callsign": "Vagabond"
+	},
+	{
+		"first": "Landon",
+		"last": "Garcia",
+		"serial": "6988504028",
+		"callsign": "Saber"
+	},
+	{
+		"first": "Ashley",
+		"last": "Murphy",
+		"serial": "3993679940",
+		"callsign": "Starblazer"
+	},
+	{
+		"first": "Hannah",
+		"last": "Wilkins",
+		"serial": "1890827120",
+		"callsign": "Panther"
+	},
+	{
+		"first": "Madison",
+		"last": "Snodgrass",
+		"serial": "0366159863",
+		"callsign": "Lynx"
+	},
+	{
+		"first": "Quinn",
+		"last": "Kelly",
+		"serial": "4850540624",
+		"callsign": "Wolfpack"
+	},
+	{
+		"first": "Ethan",
+		"last": "Perez",
+		"serial": "5607197726",
+		"callsign": "Rampager"
+	},
+	{
+		"first": "Harrison",
+		"last": "Holmes",
+		"serial": "9738425373",
+		"callsign": "Bruiser"
+	},
+	{
+		"first": "Tanner",
+		"last": "Turner",
+		"serial": "9455559915",
+		"callsign": "Brawler"
+	},
+	{
+		"first": "Dakota",
+		"last": "Matthews",
+		"serial": "5525356692",
+		"callsign": "Warrior"
+	},
+	{
+		"first": "Hayden",
+		"last": "Skinner",
+		"serial": "7712937983",
+		"callsign": "Killerbee"
+	},
+	{
+		"first": "Jackson",
+		"last": "Newman",
+		"serial": "5044813056",
+		"callsign": "Demon"
+	},
+	{
+		"first": "Nicholas",
+		"last": "Stanley",
+		"serial": "0849262300",
+		"callsign": "Devastator"
+	},
+	{
+		"first": "Hunter",
+		"last": "Singh",
+		"serial": "2491057354",
+		"callsign": "Destroyer"
+	},
+	{
+		"first": "Mason",
+		"last": "Weston",
+		"serial": "5791581513",
+		"callsign": "Dominator"
+	},
+	{
+		"first": "Kai",
+		"last": "Moore",
+		"serial": "2970786253",
+		"callsign": "Predator"
+	},
+	{
+		"first": "Emily",
+		"last": "Young",
+		"serial": "3346333411",
+		"callsign": "Rebel"
+	},
+	{
+		"first": "Chase",
+		"last": "Lee",
+		"serial": "9602264931",
+		"callsign": "Renegade"
+	},
+	{
+		"first": "Jessica",
+		"last": "Robertson",
+		"serial": "5076277404",
+		"callsign": "Scourge"
+	},
+	{
+		"first": "Kyle",
+		"last": "Raymond",
+		"serial": "4399424554",
+		"callsign": "Vandal"
+	},
+	{
+		"first": "Colin",
+		"last": "Roberts",
+		"serial": "7695248973",
+		"callsign": "Vulture"
+	},
+	{
+		"first": "Bryson",
+		"last": "Strickland",
+		"serial": "7863493303",
+		"callsign": "Werewolf"
+	},
+	{
+		"first": "Maxwell",
+		"last": "Thompson",
+		"serial": "2003650174",
+		"callsign": "Zephyr"
+	}
+]

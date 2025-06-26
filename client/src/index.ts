@@ -1,3 +1,5 @@
+import {App} from './app';
+
 document.addEventListener('DOMContentLoaded', () => {
-	console.info('Hello, world!');
+	console.info(new App());
 });
