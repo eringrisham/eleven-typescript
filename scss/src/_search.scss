@@ -14,11 +14,11 @@
         width: 200px;
     }
 
-    .selected-item {
+    .search-input {
         position: relative;
     }
 
-    .selected-item:after {
+    .search-input:after {
         content: '';
         width: 3px;
         height: 3px;

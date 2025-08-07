@@ -15,12 +15,11 @@ export class App {
 
     constructor() {
         this.initialize();
-        this.showAllPilots();
     }
 
     initialize(): void {
+        this.addAllPilots();
         this.setClickListeners();
-        this.getPilotData();
         this.captureInput();
     }
 
@@ -41,6 +40,25 @@ export class App {
         return sorted;
     }
 
+    addAllPilots(): void {
+        this.getPilotData();
+        this.search.element?.addEventListener(
+            'click',
+            () => {
+                this.pilots.forEach((pilot) => {
+                    const li = document.createElement('li');
+                    li.classList.add('dropdown-item');
+                    li.textContent = `${pilot.first} ${pilot.last}`;
+                    this.search.ulElement.appendChild(li);
+                    li.addEventListener('click', () => {
+                        this.showPilotCard(pilot);
+                    });
+                });
+            },
+            { once: true }
+        );
+    }
+
     captureInput(): void {
         this.search.inputElement?.addEventListener('input', () => {
             const value = this.search.inputElement.value.toLowerCase();
@@ -55,7 +73,6 @@ export class App {
                 li.textContent = `${pilot.first} ${pilot.last}`;
 
                 li.addEventListener('click', () => {
-                    this.search.ulElement.classList.add('active');
                     this.showPilotCard(pilot);
                 });
 
@@ -67,21 +84,6 @@ export class App {
     resetPilotCard(): void {
         const pilotInfo = this.card.querySelector('.pilot-info');
         pilotInfo?.remove();
-    }
-
-    showAllPilots(): void {
-        this.search.element?.addEventListener(
-            'click',
-            () => {
-                this.pilots.forEach((pilot) => {
-                    const li = document.createElement('li');
-                    li.classList.add('dropdown-item');
-                    li.textContent = `${pilot.first} ${pilot.last}`;
-                    this.search.ulElement.appendChild(li);
-                });
-            },
-            { once: true }
-        );
     }
 
     showPilotCard(pilot: Pilot): void {
@@ -102,7 +104,7 @@ export class App {
                 const dropdown = document.querySelector('.dropdown-box');
                 const dropdownContent =
                     document.querySelector('.dropdown-content');
-                const selectedItem = document.querySelector('.selected-item');
+                const selectedItem = document.querySelector('.search-input');
                 if (dropdown?.classList.contains('active')) {
                     if (
                         !dropdownContent?.contains(
