@@ -1,17 +1,12 @@
 import { Search } from './search';
-
-interface Pilot {
-    first: string;
-    last: string;
-    serial: string;
-    callsign: string;
-}
+import { Card } from './card';
+import { Pilot } from './types';
 
 export class App {
     pilots: Pilot[] = [];
     search: Search = new Search();
     filteredPilots: Pilot[] = [];
-    card: HTMLDivElement = document.getElementById('card') as HTMLDivElement;
+    card: Card = new Card();
 
     constructor() {
         this.initialize();
@@ -51,7 +46,7 @@ export class App {
                     li.textContent = `${pilot.first} ${pilot.last}`;
                     this.search.ulElement.appendChild(li);
                     li.addEventListener('click', () => {
-                        this.showPilotCard(pilot);
+                        this.card.showPilotCard(pilot);
                     });
                 });
             },
@@ -74,7 +69,7 @@ export class App {
                 li.textContent = fullName;
 
                 li.addEventListener('click', () => {
-                    this.showPilotCard(pilot);
+                    this.card.showPilotCard(pilot);
                     this.search.inputElement.value = '';
                     this.search.inputElement.placeholder = fullName;
                 });
@@ -82,25 +77,6 @@ export class App {
                 this.search.ulElement?.appendChild(li);
             });
         });
-    }
-
-    resetPilotCard(pilot: Pilot): void {
-        this.search.inputElement.value = '';
-        this.search.inputElement.placeholder = `${pilot.first} ${pilot.last}`;
-        const pilotInfo = this.card.querySelector('.pilot-info');
-        pilotInfo?.remove();
-    }
-
-    showPilotCard(pilot: Pilot): void {
-        this.resetPilotCard(pilot);
-        this.card.classList.add('active');
-        const div = document.createElement('div');
-        div.classList.add('pilot-info');
-        div.innerHTML = `
-        <h1>${pilot.first} ${pilot.last}</h1>
-        <h2>Call Sign: ${pilot.callsign}</h2>
-        <h3>Serial Number: ${pilot.serial}</h3>`;
-        this.card.appendChild(div);
     }
 
     setClickListeners(): void {
