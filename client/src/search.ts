@@ -13,11 +13,5 @@ export class Search {
         this.element?.addEventListener('click', () =>
             this.inputElement.focus()
         );
-        this.inputElement?.addEventListener('focus', () => this.toggle(true));
-        this.inputElement?.addEventListener('blur', () => this.toggle(false));
-    }
-
-    private toggle(force?: boolean): void {
-        this.element.classList.toggle('active', force);
     }
 }

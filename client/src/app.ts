@@ -17,14 +17,15 @@ export class App {
     constructor() {
         this.pilots = [];
         this.filteredPilots = [];
-        this.getPilotData();
-        this.captureInput();
 
         this.initialize();
+        this.showAllPilots();
     }
 
     initialize(): void {
-        this.clickEvent();
+        this.setClickListeners();
+        this.getPilotData();
+        this.captureInput();
     }
 
     async getPilotData() {
@@ -77,6 +78,7 @@ export class App {
             () => {
                 this.pilots.forEach((pilot) => {
                     const li = document.createElement('li');
+                    li.classList.add('dropdown-item');
                     li.textContent = `${pilot.first} ${pilot.last}`;
                     this.search.ulElement.appendChild(li);
                 });
@@ -101,7 +103,7 @@ export class App {
         }
     }
 
-    clickEvent() {
+    setClickListeners() {
         window.addEventListener('load', () => {
             window.addEventListener('click', (windowClickEvent) => {
                 const dropdown = document.querySelector('.dropdown-box');
@@ -120,6 +122,8 @@ export class App {
                     selectedItem?.contains(windowClickEvent.target as Node)
                 ) {
                     this.openDropdown();
+                    // const input = document.querySelector('.search-input');
+                    // (input as HTMLElement).focus();
                 }
             });
         });
