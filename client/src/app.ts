@@ -8,16 +8,12 @@ interface Pilot {
 }
 
 export class App {
-    pilots: Pilot[];
+    pilots: Pilot[] = [];
     search: Search = new Search();
-    filteredPilots: Pilot[];
+    filteredPilots: Pilot[] = [];
     card: HTMLDivElement = document.getElementById('card') as HTMLDivElement;
-    // isInitialized: boolean;
 
     constructor() {
-        this.pilots = [];
-        this.filteredPilots = [];
-
         this.initialize();
         this.showAllPilots();
     }
@@ -28,7 +24,7 @@ export class App {
         this.captureInput();
     }
 
-    async getPilotData() {
+    async getPilotData(): Promise<void> {
         try {
             const response = await fetch('../../api/pilots.json');
             const pilotData = await response.json();
@@ -39,7 +35,7 @@ export class App {
     }
 
     sortPilots(pilots: Pilot[]): Pilot[] {
-        const sorted = pilots.sort((a: any, b: any) =>
+        const sorted = pilots.sort((a: Pilot, b: Pilot) =>
             a.last.localeCompare(b.last)
         );
         return sorted;
@@ -58,21 +54,22 @@ export class App {
                 const li = document.createElement('li');
                 li.textContent = `${pilot.first} ${pilot.last}`;
 
-                li.addEventListener(
-                    'click',
-                    () => {
-                        this.search.ulElement.classList.add('active');
-                        this.showPilotCard(pilot);
-                    },
-                    { once: true }
-                );
+                li.addEventListener('click', () => {
+                    this.search.ulElement.classList.add('active');
+                    this.showPilotCard(pilot);
+                });
 
                 this.search.ulElement?.appendChild(li);
             });
         });
     }
 
-    showAllPilots() {
+    resetPilotCard(): void {
+        const pilotInfo = this.card.querySelector('.pilot-info');
+        pilotInfo?.remove();
+    }
+
+    showAllPilots(): void {
         this.search.element?.addEventListener(
             'click',
             () => {
@@ -87,9 +84,11 @@ export class App {
         );
     }
 
-    showPilotCard(pilot: Pilot) {
+    showPilotCard(pilot: Pilot): void {
+        this.resetPilotCard();
         this.card.classList.add('active');
         const div = document.createElement('div');
+        div.classList.add('pilot-info');
         div.innerHTML = `
         <h1>${pilot.first} ${pilot.last}</h1>
         <h2>${pilot.callsign}</h2>
@@ -97,13 +96,7 @@ export class App {
         this.card.appendChild(div);
     }
 
-    removePilotCard() {
-        if (this.card.classList.contains('active')) {
-            this.card.classList.remove('active');
-        }
-    }
-
-    setClickListeners() {
+    setClickListeners(): void {
         window.addEventListener('load', () => {
             window.addEventListener('click', (windowClickEvent) => {
                 const dropdown = document.querySelector('.dropdown-box');
@@ -122,19 +115,17 @@ export class App {
                     selectedItem?.contains(windowClickEvent.target as Node)
                 ) {
                     this.openDropdown();
-                    // const input = document.querySelector('.search-input');
-                    // (input as HTMLElement).focus();
                 }
             });
         });
     }
 
-    openDropdown() {
+    openDropdown(): void {
         const dropdown = document.querySelector('.dropdown-box');
         dropdown?.classList.add('active');
     }
 
-    closeDropdown() {
+    closeDropdown(): void {
         const dropdown = document.querySelector('.dropdown-box');
         dropdown?.classList.remove('active');
     }
