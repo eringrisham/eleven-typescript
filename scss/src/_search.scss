@@ -1,66 +1,145 @@
-#search {
-    position: relative;
-    width: 300px;
-    max-width: 100%;
-    padding: 0.75rem 0.5rem 0;
-    text-align: left;
+.dropdown-box {
     box-sizing: border-box;
-    background: #fff;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    height: 50px;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    width: 200px;
+    position: relative;
 
-    ul {
-        height: 50px;
-        list-style: none;
-        overflow-y: scroll;
-        position: relative;
-        display: inline-block;
-        color: blue;
-        z-index: 1;
+    input {
+        padding: 0;
+        outline: none;
         cursor: pointer;
+        border: none;
+        width: 200px;
+    }
 
-        li {
-            &:hover {
-                background-color: pink;
+    .selected-item {
+        position: relative;
+    }
+
+    .selected-item:after {
+        content: '';
+        width: 3px;
+        height: 3px;
+        border: 2px solid;
+        border-color: transparent rgb(138, 43, 226) rgb(138, 43, 226)
+            transparent;
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        transform: translateY(-70%) rotate(45deg);
+    }
+
+    &.active .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        z-index: 1;
+        display: none;
+        max-height: 100px;
+        overflow: auto;
+        box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+        width: 200px;
+        background-color: white;
+
+        input {
+            padding-left: 5%;
+            color: rgb(138, 43, 226);
+            padding: 0;
+            width: 200px;
+            outline: none;
+            cursor: pointer;
+            border: none;
+        }
+
+        ul {
+            list-style: none;
+            padding: 5% 0 5% 5%;
+            margin: 0;
+
+            li {
+                padding: 1%;
+                font-size: small;
+                text-align: left;
+                cursor: pointer;
+                &:hover {
+                    background-color: rgb(245, 245, 245);
+                }
+
+                &.active {
+                    color: blue;
+                }
             }
         }
     }
-
-    label,
-    input {
-        display: block;
-        box-sizing: border-box;
-    }
-
-    input {
-        width: 100%;
-        font-family: inherit;
-        font-size: 1rem;
-        line-height: 2rem;
-        border: none;
-        border-radius: 0;
-        outline: none;
-        background: none;
-    }
-
-    &:not(.active) {
-        &,
-        label,
-        input {
-            cursor: pointer;
-        }
-
-        // ul {
-        //     display: none;
-        // }
-    }
-
-    &.active {
-        border-color: #800;
-
-        ul {
-            color: green;
-        }
-    }
 }
+
+// #search {
+//     position: relative;
+//     width: 300px;
+//     max-width: 100%;
+//     padding: 0.75rem 0.5rem 0;
+//     text-align: left;
+//     box-sizing: border-box;
+//     background: #fff;
+//     border: 2px solid #fff;
+//     border-radius: 5px;
+//     height: 50px;
+
+//     ul {
+//         height: 50px;
+//         list-style: none;
+//         overflow-y: scroll;
+//         position: relative;
+//         display: inline-block;
+//         color: blue;
+//         z-index: 1;
+//         cursor: pointer;
+
+//         li {
+//             &:hover {
+//                 background-color: pink;
+//             }
+//         }
+//     }
+
+//     label,
+//     input {
+//         display: block;
+//         box-sizing: border-box;
+//     }
+
+//     input {
+//         width: 100%;
+//         font-family: inherit;
+//         font-size: 1rem;
+//         line-height: 2rem;
+//         border: none;
+//         border-radius: 0;
+//         outline: none;
+//         background: none;
+//     }
+
+//     &:not(.active) {
+//         &,
+//         label,
+//         input {
+//             cursor: pointer;
+//         }
+
+//         // ul {
+//         //     display: none;
+//         // }
+//     }
+
+//     &.active {
+//         border-color: #800;
+
+//         ul {
+//             color: green;
+//         }
+//     }
+// }

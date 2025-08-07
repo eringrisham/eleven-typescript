@@ -12,7 +12,7 @@ export class App {
     search: Search = new Search();
     filteredPilots: Pilot[];
     card: HTMLDivElement = document.getElementById('card') as HTMLDivElement;
-    isInitialized: boolean;
+    // isInitialized: boolean;
 
     constructor() {
         this.pilots = [];
@@ -20,15 +20,11 @@ export class App {
         this.getPilotData();
         this.captureInput();
 
-        this.isInitialized = false;
         this.initialize();
     }
 
     initialize(): void {
-        if (!this.isInitialized) {
-            this.showAllPilots();
-            this.isInitialized = true;
-        }
+        this.clickEvent();
     }
 
     async getPilotData() {
@@ -103,5 +99,39 @@ export class App {
         if (this.card.classList.contains('active')) {
             this.card.classList.remove('active');
         }
+    }
+
+    clickEvent() {
+        window.addEventListener('load', () => {
+            window.addEventListener('click', (windowClickEvent) => {
+                const dropdown = document.querySelector('.dropdown-box');
+                const dropdownContent =
+                    document.querySelector('.dropdown-content');
+                const selectedItem = document.querySelector('.selected-item');
+                if (dropdown?.classList.contains('active')) {
+                    if (
+                        !dropdownContent?.contains(
+                            windowClickEvent.target as Node
+                        )
+                    ) {
+                        this.closeDropdown();
+                    }
+                } else if (
+                    selectedItem?.contains(windowClickEvent.target as Node)
+                ) {
+                    this.openDropdown();
+                }
+            });
+        });
+    }
+
+    openDropdown() {
+        const dropdown = document.querySelector('.dropdown-box');
+        dropdown?.classList.add('active');
+    }
+
+    closeDropdown() {
+        const dropdown = document.querySelector('.dropdown-box');
+        dropdown?.classList.remove('active');
     }
 }
