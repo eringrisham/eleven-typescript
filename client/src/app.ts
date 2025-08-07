@@ -98,8 +98,8 @@ export class App {
         div.classList.add('pilot-info');
         div.innerHTML = `
         <h1>${pilot.first} ${pilot.last}</h1>
-        <h2>${pilot.callsign}</h2>
-        <h3>${pilot.serial}</h3>`;
+        <h2>Call Sign: ${pilot.callsign}</h2>
+        <h3>Serial Number: ${pilot.serial}</h3>`;
         this.card.appendChild(div);
     }
 
