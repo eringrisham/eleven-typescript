@@ -70,10 +70,13 @@ export class App {
 
             this.filteredPilots.forEach((pilot) => {
                 const li = document.createElement('li');
-                li.textContent = `${pilot.first} ${pilot.last}`;
+                const fullName = `${pilot.first} ${pilot.last}`;
+                li.textContent = fullName;
 
                 li.addEventListener('click', () => {
                     this.showPilotCard(pilot);
+                    this.search.inputElement.value = '';
+                    this.search.inputElement.placeholder = fullName;
                 });
 
                 this.search.ulElement?.appendChild(li);
@@ -81,13 +84,15 @@ export class App {
         });
     }
 
-    resetPilotCard(): void {
+    resetPilotCard(pilot: Pilot): void {
+        this.search.inputElement.value = '';
+        this.search.inputElement.placeholder = `${pilot.first} ${pilot.last}`;
         const pilotInfo = this.card.querySelector('.pilot-info');
         pilotInfo?.remove();
     }
 
     showPilotCard(pilot: Pilot): void {
-        this.resetPilotCard();
+        this.resetPilotCard(pilot);
         this.card.classList.add('active');
         const div = document.createElement('div');
         div.classList.add('pilot-info');
